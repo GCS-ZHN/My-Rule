@@ -61,6 +61,13 @@ Clash 采用继承的分流配置方式，例如，巴哈姆特设置为使用�
 ### 配合ZJU-Connect嵌入clash的一个小技巧（对自建subconverter用户）
 ZJU-Connect和clash无法同时开启系统代理，可以用个小技巧将ZJU-Connect的socks5代理整合进入clash。
 
+最佳方法是直接使用subconverter支持的类telegram链接生成一个订阅。
+```
+tg://socks?server=127.0.0.1&port=1080&remarks=ZJU Connect
+```
+
+此外对于需要在服务端统一添加额外的节点的情况，可以使用下列方法设定。
+
 - 首先自定义一个clash配置节点，例如名为`zju-connect.yml`，里面的参数是ZJU-Connect决定的。
 ```yml
 proxies:
