@@ -58,6 +58,21 @@
 
 Clash 采用继承的分流配置方式，例如，巴哈姆特设置为使用台湾节点，则将使用台湾节点分组中选中的节点进行代理。可以根据自己的需要进行配置，如将哔哩哔哩配置为香港/台湾节点以访问港澳台资源
 
+### 配合ZJU-Connect嵌入clash的一个小技巧（对自建subconverter用户）
+ZJU-Connect和clash无法同时开启系统代理，可以用个小技巧将ZJU-Connect的socks5代理整合进入clash。
+
+- 首先自定义一个clash配置节点，例如名为`zju-connect.yml`，里面的参数是ZJU-Connect决定的。
+```yml
+proxies:
+  - {name: ZJU-Connect, server: localhost, port: 1080, type: socks5}
+```
+
+- 其次在`subconverter`的`pref.ini`中指定`insert_url=zju-connect.yml`。
+- 然后重启subconverter。
+- 最后clash更新订阅链接，启动本地的zju-connect链接，在校外访问时选择ZJU-Connect即可。
+
+实际上不怕端口暴露的话，也完全可以将zju-connect部属在服务器上。
+
 ## 常见问题
 
 + 我不喜欢生成的规则/分组太复杂，可以更改吗？
