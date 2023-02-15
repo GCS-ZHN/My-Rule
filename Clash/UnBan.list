@@ -41,3 +41,6 @@ DOMAIN,bdtj.tagtic.cn
 
 # Hypixel Network
 DOMAIN,rewards.hypixel.net
+
+# auth0
+DOMAIN-SUFFIX,auth0.com
